@@ -5,10 +5,12 @@
              Title="Enter a new tip">
     <Grid RowDefinitions="auto,auto,*,auto">
         <Grid Grid.Row="0"
-              RowDefinitions="*,auto">
-            <Label Text="Include a random image?"
+              Margin="10,5"
+              ColumnDefinitions="*,auto">
+            <Label Grid.Column="0"
+                   Text="Include a random image?"
                    VerticalOptions="Center" />
-            <Switch Margin="10,0"
+            <Switch Grid.Column="1"
                     IsToggled="{Binding IncludeRandomImage}"
                     VerticalOptions="Center" />
             <Grid.GestureRecognizers>

@@ -26,6 +26,12 @@ namespace Budderfly_MAUI_Test.Repositories
             }
         }
 
+        public int GetTipsCount()
+        {
+            lock (Database.CollisionLock)
+                return Database.Connection.Table<EnergySavingTip>().Count();
+        }
+
         public List<EnergySavingTip> InsertAllEnergySavingTips(List<EnergySavingTip> energySavingTips)
         {
             lock (Database.CollisionLock)

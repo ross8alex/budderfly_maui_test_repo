@@ -1,6 +1,7 @@
 ﻿using Budderfly_MAUI_Test.Models;
 using Budderfly_MAUI_Test.Repositories;
 using Budderfly_MAUI_Test.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -55,7 +56,24 @@ namespace Budderfly_MAUI_Test.ViewModels
 
             AddNewTipClicked = new Command(AddNewTip);
 
+            CreateTipsIfNone();
             RefreshTips();
+        }
+
+        public async void CreateTipsIfNone()
+        {
+            //If nothing exists in the database, get defaults from json file
+            if(EnergySavingTipDAL.GetTipsCount() == 0)
+            {
+                using var stream = await FileSystem.OpenAppPackageFileAsync("energy_saving_tips.json");
+                using var reader = new StreamReader(stream);
+
+                //Deserialize json into list of tips
+                List<EnergySavingTip> tips = JsonConvert.DeserializeObject<List<EnergySavingTip>>(reader.ReadToEnd());
+
+                //Save all deserialized tips
+                EnergySavingTipDAL.InsertAllEnergySavingTips(tips);
+            }
         }
 
         public void RefreshTips()

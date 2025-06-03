@@ -71,6 +71,7 @@ namespace Budderfly_MAUI_Test.ViewModels
             }
             set
             {
+                //Save to Preferences so that option is saved for next time
                 if(includeRandomImage != value)
                     Preferences.Set(nameof(IncludeRandomImage), value);
                 

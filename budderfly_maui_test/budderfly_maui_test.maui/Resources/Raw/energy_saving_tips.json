@@ -1,0 +1,26 @@
+[
+  {
+    "EnergyTipTitle": "Lights",
+    "EnergyTipDescription": "Turn off the lights in rooms you aren't actively spending time in'"
+  },
+  {
+    "EnergyTipTitle": "Lights",
+    "EnergyTipDescription": "Replace standard light bulbs with LEDs"
+  },
+  {
+    "EnergyTipTitle": "Heating and Cooling",
+    "EnergyTipDescription": "Adjust your thermostat to lower the temperature in the winter and raise it in the summer"
+  },
+  {
+    "EnergyTipTitle": "Heating and Cooling",
+    "EnergyTipDescription": "Use ceiling fans to circulate air instead of air conditioning"
+  },
+  {
+    "EnergyTipTitle": "Appliances",
+    "EnergyTipDescription": "Wash laundry in cold water"
+  },
+  {
+    "EnergyTipTitle": "Appliances",
+    "EnergyTipDescription": "Only run the dishwasher and washing machine when full"
+  }
+]
