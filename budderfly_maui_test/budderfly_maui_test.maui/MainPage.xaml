@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Budderfly_MAUI_Test.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Budderfly MAUI Test">
+
+    <Grid>
+        <CollectionView Margin="10,5"
+                        ItemsSource="{Binding EnergySavingTips}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Border Margin="0,5"
+                                Padding="0"
+                                StrokeShape="RoundRectangle 15,15,15,15">
+                            <Grid RowDefinitions="auto,*">
+                                <Image Grid.Row="0"
+                                       Aspect="AspectFill"
+                                       HeightRequest="150"
+                                       IsVisible="{Binding HasImage}"
+                                       Source="{Binding EnergyTipImage}" />
+                                <VerticalStackLayout Grid.Row="1"
+                                                     Margin="5">
+                                    <Label FontAttributes="Bold"
+                                           FontSize="Title"
+                                           Text="{Binding EnergyTipTitle}" />
+                                    <Label FontSize="Body"
+                                           Text="{Binding EnergyTipDescription}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Margin="10"
+                Command="{Binding AddNewTipClicked}"
+                CornerRadius="25"
+                HorizontalOptions="End"
+                Text="Add New Tip"
+                VerticalOptions="End" />
+    </Grid>
+
+</ContentPage>
